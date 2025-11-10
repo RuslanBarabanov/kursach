@@ -1,0 +1,136 @@
+2025-11-10 17:38:47 [INFO] База клиентов успешно загружена.
+2025-11-10 17:38:47 [INFO] Сервер запущен и ожидает подключения на порту 33333
+2025-11-10 18:21:13 - INFO - Starting server...
+2025-11-10 18:21:13 - INFO - Auth file: vcalc.conf
+2025-11-10 18:21:13 - INFO - Log file: ./log/vcalc.log
+2025-11-10 18:21:13 - INFO - Port: 33333
+2025-11-10 18:21:13 - INFO - Authentication database loaded successfully
+2025-11-10 18:21:13 - INFO - Server started successfully on port 33333
+2025-11-10 18:26:26 - INFO - New client connected: 127.0.0.1
+2025-11-10 18:26:26 - INFO - Handling client: 127.0.0.1
+2025-11-10 18:26:26 - ERROR - Failed to receive auth message from client
+2025-11-10 18:27:26 - INFO - New client connected: 127.0.0.1
+2025-11-10 18:27:26 - INFO - Handling client: 127.0.0.1
+2025-11-10 18:27:42 - INFO - Received auth message, length: 5
+2025-11-10 18:27:42 - ERROR - Invalid auth message length: 5 (expected 80)
+2025-11-10 18:47:50 - INFO - New client connected: 127.0.0.1
+2025-11-10 18:47:50 - INFO - Handling client: 127.0.0.1
+2025-11-10 18:47:50 - ERROR - Failed to receive auth message from client
+2025-11-10 18:50:41 - INFO - New client connected: 127.0.0.1
+2025-11-10 18:50:41 - INFO - Handling client: 127.0.0.1
+2025-11-10 18:50:41 - ERROR - Failed to receive auth message from client
+2025-11-10 18:52:58 - INFO - New client connected: 127.0.0.1
+2025-11-10 18:52:58 - INFO - Handling client: 127.0.0.1
+2025-11-10 18:52:58 - ERROR - Failed to receive auth message from client
+2025-11-10 18:56:59 - INFO - New client connected: 127.0.0.1
+2025-11-10 18:56:59 - INFO - Handling client: 127.0.0.1
+2025-11-10 18:56:59 - INFO - Received auth message, length: 76
+2025-11-10 18:56:59 - ERROR - Invalid auth message length: 76 (expected 80)
+2025-11-10 19:02:30 - INFO - New client connected: 127.0.0.1
+2025-11-10 19:02:30 - INFO - Handling client: 127.0.0.1
+2025-11-10 19:02:30 - INFO - Received auth message, length: 76
+2025-11-10 19:02:30 - ERROR - Invalid auth message length: 76 (expected 80)
+2025-11-10 19:09:05 - INFO - Starting server...
+2025-11-10 19:09:05 - INFO - Auth file: vcalc.conf
+2025-11-10 19:09:05 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:09:05 - INFO - Port: 33333
+2025-11-10 19:09:05 - INFO - Authentication database loaded successfully
+2025-11-10 19:09:05 - CRITICAL - Failed to bind socket to port 33333
+2025-11-10 19:11:33 - INFO - Starting server...
+2025-11-10 19:11:33 - INFO - Auth file: vcalc.conf
+2025-11-10 19:11:33 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:11:33 - INFO - Port: 33333
+2025-11-10 19:11:33 - INFO - Authentication database loaded successfully
+2025-11-10 19:11:33 - INFO - Server started successfully on port 33333
+2025-11-10 19:12:48 - INFO - New client connected: 127.0.0.1
+2025-11-10 19:12:48 - INFO - Handling client: 127.0.0.1
+2025-11-10 19:12:48 - INFO - Received auth message, length: 76
+2025-11-10 19:12:48 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-11-10 19:12:48 - INFO - Auth attempt - Login: 'user', Salt: AE41D906E08F0341, Hash length: 56
+2025-11-10 19:12:48 - INFO - Client authenticated: user
+2025-11-10 19:12:48 - INFO - Processing 67108864 vectors
+2025-11-10 19:12:48 - INFO - Vector 1 size: 67108864
+2025-11-10 19:14:41 - ERROR - Failed to receive vector data for vector 1
+2025-11-10 19:14:41 - ERROR - No results to send
+2025-11-10 19:14:41 - INFO - Client 127.0.0.1 disconnected
+2025-11-10 19:16:06 - INFO - New client connected: 127.0.0.1
+2025-11-10 19:16:06 - INFO - Handling client: 127.0.0.1
+2025-11-10 19:16:06 - INFO - Received auth message, length: 76
+2025-11-10 19:16:06 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-11-10 19:16:06 - INFO - Auth attempt - Login: 'user', Salt: D84B8A25E8063A64, Hash length: 56
+2025-11-10 19:16:06 - INFO - Client authenticated: user
+2025-11-10 19:16:06 - INFO - Processing 67108864 vectors
+2025-11-10 19:16:06 - INFO - Vector 1 size: 67108864
+2025-11-10 19:17:16 - ERROR - Failed to receive vector data for vector 1
+2025-11-10 19:17:16 - ERROR - No results to send
+2025-11-10 19:17:16 - INFO - Client 127.0.0.1 disconnected
+2025-11-10 19:21:43 - INFO - Starting server...
+2025-11-10 19:21:43 - INFO - Auth file: vcalc.conf
+2025-11-10 19:21:43 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:21:43 - INFO - Port: 33333
+2025-11-10 19:21:43 - INFO - Authentication database loaded successfully
+2025-11-10 19:21:43 - CRITICAL - Failed to bind socket to port 33333
+2025-11-10 19:26:59 - INFO - Starting server...
+2025-11-10 19:26:59 - INFO - Auth file: vcalc.conf
+2025-11-10 19:26:59 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:26:59 - INFO - Port: 33333
+2025-11-10 19:26:59 - INFO - Supports LITTLE-ENDIAN client format
+2025-11-10 19:26:59 - INFO - Authentication database loaded successfully
+2025-11-10 19:26:59 - CRITICAL - Failed to bind socket to port 33333
+2025-11-10 19:27:26 - INFO - Starting server...
+2025-11-10 19:27:26 - INFO - Auth file: vcalc.conf
+2025-11-10 19:27:26 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:27:26 - INFO - Port: 33333
+2025-11-10 19:27:26 - INFO - Supports LITTLE-ENDIAN client format
+2025-11-10 19:27:26 - INFO - Authentication database loaded successfully
+2025-11-10 19:27:26 - INFO - Server started successfully on port 33333
+2025-11-10 19:27:51 - INFO - New client connected: 127.0.0.1
+2025-11-10 19:27:51 - INFO - Handling client: 127.0.0.1
+2025-11-10 19:27:51 - INFO - Received auth message, length: 76
+2025-11-10 19:27:51 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-11-10 19:27:51 - INFO - Auth attempt - Login: 'user', Salt: 68785C056F503200, Hash length: 56
+2025-11-10 19:27:51 - INFO - Client authenticated: user
+2025-11-10 19:27:51 - INFO - Processing 4 vectors
+2025-11-10 19:27:51 - INFO - Vector 1 size: 4
+2025-11-10 19:27:51 - INFO - Vector 1 sum: 10
+2025-11-10 19:34:22 - ERROR - Failed to receive vector size for vector 2
+2025-11-10 19:35:50 - INFO - Starting server...
+2025-11-10 19:35:50 - INFO - Auth file: vcalc.conf
+2025-11-10 19:35:50 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:35:50 - INFO - Port: 33333
+2025-11-10 19:35:50 - INFO - Supports LITTLE-ENDIAN client format
+2025-11-10 19:35:50 - INFO - Authentication database loaded successfully
+2025-11-10 19:35:50 - INFO - Server started successfully on port 33333
+2025-11-10 19:35:55 - INFO - New client connected: 127.0.0.1
+2025-11-10 19:35:55 - INFO - Handling client: 127.0.0.1
+2025-11-10 19:35:55 - INFO - Received auth message, length: 76
+2025-11-10 19:35:55 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-11-10 19:35:55 - INFO - Auth attempt - Login: 'user', Salt: B17293B9F2D14A71, Hash length: 56
+2025-11-10 19:35:55 - INFO - Client authenticated: user
+2025-11-10 19:35:55 - INFO - Processing 4 vectors
+2025-11-10 19:35:55 - INFO - Vector 1 size: 4
+2025-11-10 19:35:55 - INFO - Vector 1 sum: 10
+2025-11-10 19:45:04 - INFO - Starting server...
+2025-11-10 19:45:04 - INFO - Auth file: vcalc.conf
+2025-11-10 19:45:04 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:45:04 - INFO - Port: 33333
+2025-11-10 19:45:04 - INFO - Supports LITTLE-ENDIAN client format
+2025-11-10 19:45:04 - INFO - Authentication database loaded successfully
+2025-11-10 19:45:04 - CRITICAL - Failed to bind socket to port 33333
+2025-11-10 19:45:14 - INFO - Starting server...
+2025-11-10 19:45:14 - INFO - Auth file: vcalc.conf
+2025-11-10 19:45:14 - INFO - Log file: ./log/vcalc.log
+2025-11-10 19:45:14 - INFO - Port: 33333
+2025-11-10 19:45:14 - INFO - Supports LITTLE-ENDIAN client format
+2025-11-10 19:45:14 - INFO - Authentication database loaded successfully
+2025-11-10 19:45:14 - INFO - Server started successfully on port 33333
+2025-11-10 19:45:36 - INFO - New client connected: 127.0.0.1
+2025-11-10 19:45:36 - INFO - Handling client: 127.0.0.1
+2025-11-10 19:45:36 - INFO - Received auth message, length: 76
+2025-11-10 19:45:36 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-11-10 19:45:36 - INFO - Auth attempt - Login: 'user', Salt: 0555151E71232881, Hash length: 56
+2025-11-10 19:45:36 - INFO - Client authenticated: user
+2025-11-10 19:45:36 - INFO - Processing 4 vectors
+2025-11-10 19:45:36 - INFO - Vector 1 size: 4
+2025-11-10 19:45:36 - INFO - Vector 1 sum: 10
+2025-11-10 20:00:38 - INFO - Client authenticated: user
