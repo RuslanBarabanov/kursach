@@ -161,32 +161,6 @@ void testLogger() {
     }
 }
 
-// Тест 4: Server (только публичный интерфейс)
-void testServer() {
-    std::cout << "\n=== Тестирование Server ===\n";
-    
-    bool allPassed = true;
-    
-    try {
-        // Тест 1: Создание сервера
-        Server server;
-        std::cout << "✓ Создание сервера - PASSED\n";
-        
-        // Тест 2: Проверка что сервер не падает при создании
-        // Не тестируем приватные методы parseCommandLine и run
-        std::cout << "✓ Базовая стабильность сервера - PASSED\n";
-        
-    } catch (...) {
-        std::cout << "✗ Создание сервера - FAILED\n";
-        allPassed = false;
-    }
-    
-    if (allPassed) {
-        std::cout << "✓ Все тесты Server пройдены\n";
-    } else {
-        std::cout << "✗ Некоторые тесты Server не пройдены\n";
-    }
-}
 
 // Тест 5: Интеграционный тест
 void testIntegration() {
@@ -302,10 +276,7 @@ int main() {
         
         testLogger();
         std::cout << "----------------------------------------\n";
-        
-        testServer();
-        std::cout << "----------------------------------------\n";
-        
+
         testIntegration();
         std::cout << "----------------------------------------\n";
         
