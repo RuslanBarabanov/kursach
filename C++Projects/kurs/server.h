@@ -6,14 +6,12 @@
 #include <vector>
 #include <cstdint>
 
-// Структура для хранения параметров командной строки
 struct ServerParams {
     std::string authFile = "./vcalc.conf";
     std::string logFile = "./log/vcalc.log";
     uint16_t port = 33333;
 };
 
-// Класс для работы с базой аутентификации
 class AuthDatabase {
 private:
     std::unordered_map<std::string, std::string> users;
@@ -22,10 +20,8 @@ public:
     bool loadFromFile(const std::string& filename);
     bool authenticate(const std::string& login, const std::string& password, 
                      const std::string& salt, const std::string& hash);
-    bool userExists(const std::string& login);
 };
 
-// Класс для логирования
 class Logger {
 private:
     std::string logFile;
@@ -38,13 +34,11 @@ public:
     void logInfo(const std::string& message);
 };
 
-// Класс для вычислений
 class Calculator {
 public:
     uint16_t calculateVectorSum(const std::vector<uint16_t>& vector);
 };
 
-// Главный класс сервера
 class Server {
 private:
     ServerParams params;
@@ -54,7 +48,6 @@ private:
     int serverSocket;
     
     bool parseCommandLine(int argc, char** argv);
-    void showHelp();
     bool initializeSocket();
     void handleClient(int clientSocket);
     bool authenticateClient(int clientSocket, std::string& clientLogin);

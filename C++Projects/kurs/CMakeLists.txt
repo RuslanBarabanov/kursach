@@ -1,18 +1,27 @@
 cmake_minimum_required(VERSION 3.10)
-project(ServerApp)
+project(ServerTests)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Находим CryptoPP
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(CRYPTOPP REQUIRED libcrypto++)
 
-find_package(Boost REQUIRED COMPONENTS program_options)
-
-add_executable(server
-    main.cpp
+# Исходные файлы
+set(SERVER_SOURCES
     server.cpp
+    test_server.cpp
 )
 
-target_include_directories(server PRIVATE ${CRYPTOPP_INCLUDE_DIRS})
-target_link_libraries(server ${CRYPTOPP_LIBRARIES} ${Boost_LIBRARIES} pthread)
+# Исполняемый файл тестов
+add_executable(server_tests ${SERVER_SOURCES})
+target_include_directories(server_tests PRIVATE ${CMAKE_SOURCE_DIR})
+target_link_libraries(server_tests ${CRYPTOPP_LIBRARIES})
+target_compile_options(server_tests PRIVATE ${CRYPTOPP_CFLAGS_OTHER})
+
+# Цель для запуска тестов
+add_custom_target(test_server
+    COMMAND ./server_tests
+    DEPENDS server_tests
+    COMMENT "Running server unit tests..."
+)

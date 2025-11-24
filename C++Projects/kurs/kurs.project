@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="test_server.cpp"/>
     <File Name="main.cpp"/>
     <File Name="server.h"/>
     <File Name="server.cpp"/>
