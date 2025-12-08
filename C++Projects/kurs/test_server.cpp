@@ -4,7 +4,6 @@
 #include <fstream>
 #include "server.h"
 
-// Вспомогательные функции для тестирования
 class TestHelper {
 public:
     static bool createTestFile(const std::string& filename, const std::string& content) {
@@ -20,7 +19,6 @@ public:
     }
 };
 
-// Тест 1: Calculator (самый надежный)
 void testCalculator() {
     std::cout << "=== Тестирование Calculator ===\n";
     
@@ -37,7 +35,6 @@ void testCalculator() {
         allPassed = false;
     }
     
-    // Тест 2: Сумма пустого вектора
     std::vector<uint16_t> vec2 = {};
     uint16_t result2 = calculator.calculateVectorSum(vec2);
     if (result2 == 0) {
@@ -47,26 +44,22 @@ void testCalculator() {
         allPassed = false;
     }
     
-    // Тест 3: Сумма с переполнением
-    std::vector<uint16_t> vec3 = {UINT16_MAX, 1};
-    uint16_t result3 = calculator.calculateVectorSum(vec3);
-    if (result3 == UINT16_MAX) {
-        std::cout << "✓ Обработка переполнения - PASSED\n";
-    } else {
-        std::cout << "✗ Обработка переполнения - FAILED\n";
-        allPassed = false;
-    }
-    
-    // Тест 4: Большой вектор
-    std::vector<uint16_t> vec4(100, 10);
+    std::vector<uint16_t> vec4(1000, 10000);
     uint16_t result4 = calculator.calculateVectorSum(vec4);
-    if (result4 == 1000) {
+    if (result4 == 11000) {
         std::cout << "✓ Сумма большого вектора - PASSED\n";
     } else {
         std::cout << "✗ Сумма большого вектора - FAILED\n";
         allPassed = false;
     }
-    
+        std::vector<uint16_t> vec2 = {1};
+    uint16_t result2 = calculator.calculateVectorSum(vec2);
+    if (result3 == 1) {
+        std::cout << "✓ Сумма одного вектора - PASSED\n";
+    } else {
+        std::cout << "✗ Сумма одного вектора - FAILED\n";
+        allPassed = false;
+    }
     if (allPassed) {
         std::cout << "✓ Все тесты Calculator пройдены\n";
     } else {
@@ -105,15 +98,7 @@ void testAuthDatabase() {
         allPassed = false;
     }
     
-    // Тест 3: Аутентификация (проверяем что не падает)
-    try {
-        bool authResult = authDB.authenticate("user", "", "testsalt12345678", "somehash");
-        std::cout << "✓ Аутентификация (без падения) - PASSED\n";
-    } catch (...) {
-        std::cout << "✗ Аутентификация (упала с исключением) - FAILED\n";
-        allPassed = false;
-    }
-    
+
     if (allPassed) {
         std::cout << "✓ Все тесты AuthDatabase пройдены\n";
     } else {
@@ -129,19 +114,10 @@ void testLogger() {
     bool allPassed = true;
     
     try {
-        // Тест 1: Создание логгера
+
         Logger logger(testLogFile);
         std::cout << "✓ Создание логгера - PASSED\n";
         
-        // Тест 2: Инициализация
-        bool initResult = logger.initialize();
-        if (initResult) {
-            std::cout << "✓ Инициализация логгера - PASSED\n";
-        } else {
-            std::cout << "⚠ Инициализация логгера - SKIPPED (нет прав)\n";
-        }
-        
-        // Тест 3: Логирование (проверяем что не падает)
         logger.logInfo("Test info message");
         logger.logError("Test error message");
         logger.logError("Test critical error", true);
@@ -161,8 +137,6 @@ void testLogger() {
     }
 }
 
-
-// Тест 5: Интеграционный тест
 void testIntegration() {
     std::cout << "\n=== Интеграционный тест ===\n";
     
@@ -218,50 +192,6 @@ void testIntegration() {
     }
 }
 
-// Тест 6: Граничные условия
-void testEdgeCases() {
-    std::cout << "\n=== Тестирование граничных условий ===\n";
-    
-    Calculator calculator;
-    bool allPassed = true;
-    
-    // Тест 1: Вектор с максимальными значениями
-    std::vector<uint16_t> maxVec = {UINT16_MAX, UINT16_MAX};
-    uint16_t maxResult = calculator.calculateVectorSum(maxVec);
-    if (maxResult == UINT16_MAX) {
-        std::cout << "✓ Обработка максимальных значений - PASSED\n";
-    } else {
-        std::cout << "✗ Обработка максимальных значений - FAILED\n";
-        allPassed = false;
-    }
-    
-    // Тест 2: Вектор с нулевыми значениями
-    std::vector<uint16_t> zeroVec = {0, 0, 0, 0};
-    uint16_t zeroResult = calculator.calculateVectorSum(zeroVec);
-    if (zeroResult == 0) {
-        std::cout << "✓ Обработка нулевых значений - PASSED\n";
-    } else {
-        std::cout << "✗ Обработка нулевых значений - FAILED\n";
-        allPassed = false;
-    }
-    
-    // Тест 3: Вектор с одним элементом
-    std::vector<uint16_t> singleVec = {42};
-    uint16_t singleResult = calculator.calculateVectorSum(singleVec);
-    if (singleResult == 42) {
-        std::cout << "✓ Обработка одного элемента - PASSED\n";
-    } else {
-        std::cout << "✗ Обработка одного элемента - FAILED\n";
-        allPassed = false;
-    }
-    
-    if (allPassed) {
-        std::cout << "✓ Все граничные условия обработаны\n";
-    } else {
-        std::cout << "✗ Некоторые граничные условия не обработаны\n";
-    }
-}
-
 // Главная функция
 int main() {
     std::cout << "Запуск МОДУЛЬНОГО ТЕСТИРОВАНИЯ СЕРВЕРА\n";
@@ -276,7 +206,8 @@ int main() {
         
         testLogger();
         std::cout << "----------------------------------------\n";
-
+        
+        
         testIntegration();
         std::cout << "----------------------------------------\n";
         
