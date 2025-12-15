@@ -47,6 +47,7 @@ void testCalculator() {
     std::vector<uint16_t> vec4(1000, 10000);
     uint16_t result4 = calculator.calculateVectorSum(vec4);
     if (result4 == 11000) {
+<<<<<<< HEAD
         std::cout << "✗ Сумма большого вектора - FAILED\n";
     } else {
         std::cout << "✓ Сумма большого вектора - PASSED\n";
@@ -57,11 +58,21 @@ void testCalculator() {
     uint16_t result3 = calculator.calculateVectorSum(vec3);
     if (result3 == 1) {
         std::cout << "✓ Сумма одного вектора - PASSED\n";
+=======
+        std::cout << "✓ Сумма большого вектора - PASSED\n";
+>>>>>>> d7a4380fd1ede2d8e29b1fa7e5806b6ee2aae36c
     } else {
         std::cout << "✗ Сумма одного вектора - FAILED\n";
         allPassed = false;
     }
-    
+        std::vector<uint16_t> vec2 = {1};
+    uint16_t result2 = calculator.calculateVectorSum(vec2);
+    if (result3 == 1) {
+        std::cout << "✓ Сумма одного вектора - PASSED\n";
+    } else {
+        std::cout << "✗ Сумма одного вектора - FAILED\n";
+        allPassed = false;
+    }
     if (allPassed) {
         std::cout << "✗ Некоторые тесты Calculator не пройдены\n";
     } else {
@@ -194,11 +205,14 @@ void testIntegration() {
     }
 }
 
+<<<<<<< HEAD
 void testEdgeCases() {
     std::cout << "\n";
     std::cout << "\n";
 }
 
+=======
+>>>>>>> d7a4380fd1ede2d8e29b1fa7e5806b6ee2aae36c
 // Главная функция
 int main() {
     std::cout << "Запуск МОДУЛЬНОГО ТЕСТИРОВАНИЯ СЕРВЕРА\n";
@@ -214,6 +228,10 @@ int main() {
         testLogger();
         std::cout << "----------------------------------------\n";
         
+<<<<<<< HEAD
+=======
+        
+>>>>>>> d7a4380fd1ede2d8e29b1fa7e5806b6ee2aae36c
         testIntegration();
         std::cout << "----------------------------------------\n";
         
