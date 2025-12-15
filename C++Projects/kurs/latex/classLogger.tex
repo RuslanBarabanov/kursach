@@ -1,0 +1,107 @@
+\hypertarget{classLogger}{}\doxysection{Класс Logger}
+\label{classLogger}\index{Logger@{Logger}}
+
+
+Система логирования сервера  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLogger_a4f2ee02db1d03a83b6b9b43808e09f15}{Logger}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Конструктор логгера \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLogger_a1287de14553cab2d7fddb74a015cef63}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Инициализирует логгер \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a97c1374c260c397ea60c90308bb4781e}{log\+Error}} (const std\+::string \&message, bool critical=false)
+\begin{DoxyCompactList}\small\item\em Записывает сообщение об ошибке в лог \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a3b2e97470572358030fa427c649cf8d5}{log\+Info}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Записывает информационное сообщение в лог \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Система логирования сервера 
+
+Обеспечивает запись логов в файл с временными метками. 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classLogger_a4f2ee02db1d03a83b6b9b43808e09f15}\label{classLogger_a4f2ee02db1d03a83b6b9b43808e09f15}} 
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Конструктор логгера 
+
+Создает экземпляр логгера с указанным именем файла для записи логов.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Имя файла для записи логов \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classLogger_a1287de14553cab2d7fddb74a015cef63}\label{classLogger_a1287de14553cab2d7fddb74a015cef63}} 
+\index{Logger@{Logger}!initialize@{initialize}}
+\index{initialize@{initialize}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool Logger\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Инициализирует логгер 
+
+Создает директорию для лог-\/файла, если она не существует.
+
+\begin{DoxyReturn}{Возвращает}
+true если инициализация успешна, false в случае ошибки 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLogger_a97c1374c260c397ea60c90308bb4781e}\label{classLogger_a97c1374c260c397ea60c90308bb4781e}} 
+\index{Logger@{Logger}!logError@{logError}}
+\index{logError@{logError}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}}
+{\footnotesize\ttfamily void Logger\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message,  }\item[{bool}]{critical = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Записывает сообщение об ошибке в лог 
+
+Сообщение записывается в лог-\/файл с временной меткой и уровнем ERROR или CRITICAL, а также выводится в stderr.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Текст сообщения об ошибке \\
+\hline
+{\em critical} & Флаг критической ошибки (true для CRITICAL, false для ERROR) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLogger_a3b2e97470572358030fa427c649cf8d5}\label{classLogger_a3b2e97470572358030fa427c649cf8d5}} 
+\index{Logger@{Logger}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{logInfo()}{logInfo()}}
+{\footnotesize\ttfamily void Logger\+::log\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Записывает информационное сообщение в лог 
+
+Сообщение записывается в лог-\/файл с временной меткой и уровнем INFO, а также выводится в stdout.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Текст информационного сообщения \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{server_8cpp}{}\doxysection{Файл server.\+cpp}
+\label{server_8cpp}\index{server.cpp@{server.cpp}}
+
+
+Реализация сервера для вычисления суммы векторов  
+
+
+{\ttfamily \#include \char`\"{}server.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$cryptopp/sha.\+h$>$}\newline
+{\ttfamily \#include $<$cryptopp/hex.\+h$>$}\newline
+Граф включаемых заголовочных файлов для server.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{server_8cpp_a1a70c1bde2ee3fb756188501c8740410}{parse\+Command\+Line}} (int argc, char $\ast$$\ast$argv, \mbox{\hyperlink{structServerParams}{Server\+Params}} \&params)
+\begin{DoxyCompactList}\small\item\em $<$ Псевдоним для пространства имен Crypto\+PP \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Реализация сервера для вычисления суммы векторов 
+
+Данный файл содержит реализацию сервера, который принимает подключения от клиентов, аутентифицирует их, получает векторы чисел и вычисляет их суммы с обработкой переполнения. \begin{DoxyAuthor}{Автор}
+Barabanov Ruslan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Дата}
+16.\+12.\+2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Версия}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{server_8cpp_a1a70c1bde2ee3fb756188501c8740410}\label{server_8cpp_a1a70c1bde2ee3fb756188501c8740410}} 
+\index{server.cpp@{server.cpp}!parseCommandLine@{parseCommandLine}}
+\index{parseCommandLine@{parseCommandLine}!server.cpp@{server.cpp}}
+\doxysubsubsection{\texorpdfstring{parseCommandLine()}{parseCommandLine()}}
+{\footnotesize\ttfamily bool parse\+Command\+Line (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{\mbox{\hyperlink{structServerParams}{Server\+Params}} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+$<$ Псевдоним для пространства имен Crypto\+PP 
+
+Разбирает аргументы командной строки
+
+Функция обрабатывает параметры командной строки и заполняет структуру \mbox{\hyperlink{structServerParams}{Server\+Params}}. Поддерживаемые опции\+: -\/h/--help, -\/a/--auth, -\/l/--log, -\/p/--port.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em argc} & Количество аргументов \\
+\hline
+{\em argv} & Массив аргументов \\
+\hline
+{\em params} & Структура для хранения параметров сервера \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если разбор успешен, false в случае ошибки или запроса справки
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+При указании -\/h или --help функция выводит справку и возвращает false 
+\end{DoxyNote}

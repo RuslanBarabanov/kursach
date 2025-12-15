@@ -1,0 +1,59 @@
+\begin{theindex}
+
+  \item {AuthDatabase}, \hyperpage{5}
+    \subitem {authenticate}, \hyperpage{5}
+    \subitem {loadFromFile}, \hyperpage{6}
+  \item {authenticate}
+    \subitem {AuthDatabase}, \hyperpage{5}
+
+  \indexspace
+
+  \item {calculateVectorSum}
+    \subitem {Calculator}, \hyperpage{7}
+  \item {Calculator}, \hyperpage{7}
+    \subitem {calculateVectorSum}, \hyperpage{7}
+
+  \indexspace
+
+  \item {initialize}
+    \subitem {Logger}, \hyperpage{9}
+
+  \indexspace
+
+  \item {loadFromFile}
+    \subitem {AuthDatabase}, \hyperpage{6}
+  \item {logError}
+    \subitem {Logger}, \hyperpage{9}
+  \item {Logger}, \hyperpage{8}
+    \subitem {initialize}, \hyperpage{9}
+    \subitem {logError}, \hyperpage{9}
+    \subitem {Logger}, \hyperpage{8}
+    \subitem {logInfo}, \hyperpage{9}
+  \item {logInfo}
+    \subitem {Logger}, \hyperpage{9}
+
+  \indexspace
+
+  \item {parseCommandLine}
+    \subitem {server.cpp}, \hyperpage{14}
+
+  \indexspace
+
+  \item {run}
+    \subitem {Server}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Server}, \hyperpage{10}
+    \subitem {run}, \hyperpage{10}
+    \subitem {Server}, \hyperpage{10}
+  \item {server.cpp}, \hyperpage{13}
+    \subitem {parseCommandLine}, \hyperpage{14}
+  \item {server.h}, \hyperpage{15}
+  \item {ServerParams}, \hyperpage{11}
+
+  \indexspace
+
+  \item {TestHelper}, \hyperpage{11}
+
+\end{theindex}

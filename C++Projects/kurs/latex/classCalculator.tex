@@ -1,0 +1,59 @@
+\hypertarget{classCalculator}{}\doxysection{Класс Calculator}
+\label{classCalculator}\index{Calculator@{Calculator}}
+
+
+Калькулятор для вычисления сумм векторов  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classCalculator_aabd10a11743ae09dfb085a239afb26ed}{calculate\+Vector\+Sum}} (const std\+::vector$<$ uint16\+\_\+t $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Вычисляет сумму элементов вектора с обработкой переполнения \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Калькулятор для вычисления сумм векторов 
+
+Вычисляет сумму элементов вектора с обработкой переполнения. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classCalculator_aabd10a11743ae09dfb085a239afb26ed}\label{classCalculator_aabd10a11743ae09dfb085a239afb26ed}} 
+\index{Calculator@{Calculator}!calculateVectorSum@{calculateVectorSum}}
+\index{calculateVectorSum@{calculateVectorSum}!Calculator@{Calculator}}
+\doxysubsubsection{\texorpdfstring{calculateVectorSum()}{calculateVectorSum()}}
+{\footnotesize\ttfamily uint16\+\_\+t Calculator\+::calculate\+Vector\+Sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint16\+\_\+t $>$ \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Вычисляет сумму элементов вектора с обработкой переполнения 
+
+Функция вычисляет сумму всех элементов вектора 16-\/битных беззнаковых целых чисел. Для предотвращения переполнения используется 64-\/битная арифметика, а результат приводится к 16-\/битному типу, что эквивалентно взятию остатка от деления на 65536.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em vector} & Вектор 16-\/битных беззнаковых целых чисел \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Сумма элементов вектора по модулю 65536 (тип uint16\+\_\+t)
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Для вектора из 1000 элементов со значением 10000 каждый\+: 1000 $\ast$ 10000 = 10000000 10000000 \% 65536 = 11000 
+\end{DoxyNote}
+\begin{DoxyWarning}{Предупреждения}
+Максимальное значение uint16\+\_\+t\+: 65535 (0x\+FFFF) 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{См. также}
+Для больших векторов сумма может превышать 2$^\wedge$64, но на практике это маловероятно 
+\end{DoxySeeAlso}
+$<$ unsigned long long = uint64\+\_\+t
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

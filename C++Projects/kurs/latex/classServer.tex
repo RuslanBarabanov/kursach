@@ -1,0 +1,70 @@
+\hypertarget{classServer}{}\doxysection{Класс Server}
+\label{classServer}\index{Server@{Server}}
+
+
+Основной класс сервера  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_ad5ec9462b520e59f7ea831e157ee5e59}{Server}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор сервера \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServer_a44710fb755da46ddd28de545cc9cf8b5}{run}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Основная функция запуска сервера \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Основной класс сервера 
+
+Управляет сетевыми подключениями, аутентификацией клиентов и обработкой запросов на вычисление сумм векторов. 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classServer_ad5ec9462b520e59f7ea831e157ee5e59}\label{classServer_ad5ec9462b520e59f7ea831e157ee5e59}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Конструктор сервера 
+
+Инициализирует сервер с дефолтными значениями\+: пустой логгер и неинициализированный сокет. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classServer_a44710fb755da46ddd28de545cc9cf8b5}\label{classServer_a44710fb755da46ddd28de545cc9cf8b5}} 
+\index{Server@{Server}!run@{run}}
+\index{run@{run}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int Server\+::run (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Основная функция запуска сервера 
+
+Инициализирует все компоненты сервера, запускает прослушивание порта и в бесконечном цикле принимает и обрабатывает подключения клиентов.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em argc} & Количество аргументов командной строки \\
+\hline
+{\em argv} & Массив аргументов командной строки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+0 при успешном завершении, 1 в случае ошибки
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Сервер работает до принудительного завершения (Ctrl+C) 
+\end{DoxyNote}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

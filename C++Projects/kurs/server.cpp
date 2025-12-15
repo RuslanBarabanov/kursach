@@ -1,3 +1,14 @@
+/**
+ * @file server.cpp
+ * @brief Реализация сервера для вычисления суммы векторов
+ * 
+ * Данный файл содержит реализацию сервера, который принимает подключения от клиентов,
+ * аутентифицирует их, получает векторы чисел и вычисляет их суммы с обработкой переполнения.
+ * @author Barabanov Ruslan
+ * @date 16.12.2025
+ * @version 1.0
+ */
+
 #include "server.h"
 #include <iostream>
 #include <fstream>
@@ -13,8 +24,21 @@
 #include <cryptopp/sha.h>
 #include <cryptopp/hex.h>
 
-namespace CPP = CryptoPP;
+namespace CPP = CryptoPP; 
 
+/**
+ * @brief Разбирает аргументы командной строки
+ * 
+ * Функция обрабатывает параметры командной строки и заполняет структуру ServerParams.
+ * Поддерживаемые опции: -h/--help, -a/--auth, -l/--log, -p/--port.
+ * 
+ * @param argc Количество аргументов
+ * @param argv Массив аргументов
+ * @param params Структура для хранения параметров сервера
+ * @return true если разбор успешен, false в случае ошибки или запроса справки
+ * 
+ * @note При указании -h или --help функция выводит справку и возвращает false
+ */
 bool parseCommandLine(int argc, char** argv, ServerParams& params) {
     for (int i = 1; i < argc; i++) {
         std::string arg = argv[i];
@@ -45,6 +69,17 @@ bool parseCommandLine(int argc, char** argv, ServerParams& params) {
     return true;
 }
 
+/**
+ * @brief Загружает базу данных аутентификации из файла
+ * 
+ * Функция читает файл в формате "логин:пароль" и заполняет внутреннюю карту пользователей.
+ * Каждая строка файла должна содержать логин и пароль, разделенные двоеточием.
+ * 
+ * @param filename Имя файла с данными аутентификации
+ * @return true если файл успешно загружен, false в случае ошибки
+ * 
+ * @throw Не выбрасывает исключения, ошибки логируются в stderr
+ */
 bool AuthDatabase::loadFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
@@ -67,6 +102,21 @@ bool AuthDatabase::loadFromFile(const std::string& filename) {
     return true;
 }
 
+/**
+ * @brief Аутентифицирует пользователя по логину, соли и хешу
+ * 
+ * Функция проверяет аутентификационные данные пользователя, вычисляя SHA224 хеш
+ * от комбинации соли и пароля, и сравнивает его с предоставленным хешем.
+ * 
+ * @param login Логин пользователя (должен быть "user" после очистки пробелов)
+ * @param password Пароль (не используется, захардкожен как "P@ssW0rd")
+ * @param salt Соль для хеширования (16 байт)
+ * @param hash Ожидаемый хеш пароля (56 байт в hex)
+ * @return true если аутентификация успешна, false в случае ошибки
+ * 
+ * @note Хеш вычисляется как SHA224(salt + "P@ssW0rd") в верхнем регистре
+ * @warning Пароль захардкожен и должен совпадать с паролем в клиенте
+ */
 bool AuthDatabase::authenticate(const std::string& login, const std::string& password, 
                                const std::string& salt, const std::string& hash) {
     std::string cleanLogin = login;
@@ -103,8 +153,24 @@ bool AuthDatabase::authenticate(const std::string& login, const std::string& pas
     }
 }
 
+/**
+ * @brief Конструктор логгера
+ * 
+ * Создает экземпляр логгера с указанным именем файла для записи логов.
+ * 
+ * @param filename Имя файла для записи логов
+ */
 Logger::Logger(const std::string& filename) : logFile(filename) {}
 
+/**
+ * @brief Создает директорию для лог-файла
+ * 
+ * Функция извлекает путь к директории из полного имени файла и создает
+ * все необходимые директории с помощью команды mkdir -p.
+ * 
+ * @param filepath Полный путь к лог-файлу
+ * @return true если директория создана или уже существует, false в случае ошибки
+ */
 bool Logger::createLogDirectory(const std::string& filepath) {
     size_t pos = filepath.find_last_of('/');
     if (pos == std::string::npos) return true;
@@ -116,10 +182,26 @@ bool Logger::createLogDirectory(const std::string& filepath) {
     return system(command.c_str()) == 0;
 }
 
+/**
+ * @brief Инициализирует логгер
+ * 
+ * Создает директорию для лог-файла, если она не существует.
+ * 
+ * @return true если инициализация успешна, false в случае ошибки
+ */
 bool Logger::initialize() {
     return createLogDirectory(logFile);
 }
 
+/**
+ * @brief Записывает сообщение об ошибке в лог
+ * 
+ * Сообщение записывается в лог-файл с временной меткой и уровнем ERROR или CRITICAL,
+ * а также выводится в stderr.
+ * 
+ * @param message Текст сообщения об ошибке
+ * @param critical Флаг критической ошибки (true для CRITICAL, false для ERROR)
+ */
 void Logger::logError(const std::string& message, bool critical) {
     std::ofstream file(logFile, std::ios::app);
     if (file.is_open()) {
@@ -131,6 +213,14 @@ void Logger::logError(const std::string& message, bool critical) {
     std::cerr << (critical ? "CRITICAL" : "ERROR") << ": " << message << std::endl;
 }
 
+/**
+ * @brief Записывает информационное сообщение в лог
+ * 
+ * Сообщение записывается в лог-файл с временной меткой и уровнем INFO,
+ * а также выводится в stdout.
+ * 
+ * @param message Текст информационного сообщения
+ */
 void Logger::logInfo(const std::string& message) {
     std::ofstream file(logFile, std::ios::app);
     if (file.is_open()) {
@@ -141,23 +231,62 @@ void Logger::logInfo(const std::string& message) {
     std::cout << "INFO: " << message << std::endl;
 }
 
+/**
+ * @brief Вычисляет сумму элементов вектора с обработкой переполнения
+ * 
+ * Функция вычисляет сумму всех элементов вектора 16-битных беззнаковых целых чисел.
+ * Для предотвращения переполнения используется 64-битная арифметика, а результат
+ * приводится к 16-битному типу, что эквивалентно взятию остатка от деления на 65536.
+ * 
+ * @param vector Вектор 16-битных беззнаковых целых чисел
+ * @return Сумма элементов вектора по модулю 65536 (тип uint16_t)
+ * 
+ * @note Для вектора из 1000 элементов со значением 10000 каждый:
+ *       1000 * 10000 = 10000000
+ *       10000000 % 65536 = 11000
+ * @warning Максимальное значение uint16_t: 65535 (0xFFFF)
+ * @see Для больших векторов сумма может превышать 2^64, но на практике это маловероятно
+ */
 uint16_t Calculator::calculateVectorSum(const std::vector<uint16_t>& vector) {
-    uint32_t sum = 0;
+  
+    unsigned long long sum = 0; 
     
-    for (uint16_t value : vector) {
-        if (sum > UINT16_MAX - value) return UINT16_MAX;
-        sum += value;
+    for (size_t i = 0; i < vector.size(); i++) {
+        sum += (unsigned long long)vector[i];
     }
     
-    return static_cast<uint16_t>(sum);
+    return (uint16_t)sum;
 }
 
+/**
+ * @brief Конструктор сервера
+ * 
+ * Инициализирует сервер с дефолтными значениями: пустой логгер и неинициализированный сокет.
+ */
 Server::Server() : logger(""), serverSocket(-1) {}
 
+/**
+ * @brief Разбирает аргументы командной строки для сервера
+ * 
+ * @param argc Количество аргументов
+ * @param argv Массив аргументов
+ * @return true если разбор успешен, false в случае ошибки
+ */
 bool Server::parseCommandLine(int argc, char** argv) {
     return ::parseCommandLine(argc, argv, params);
 }
 
+/**
+ * @brief Инициализирует сетевой сокет сервера
+ * 
+ * Создает TCP-сокет, настраивает его параметры, привязывает к указанному порту
+ * и переводит в режим прослушивания подключений.
+ * 
+ * @return true если инициализация успешна, false в случае ошибки
+ * 
+ * @note Используется порт из params.port (по умолчанию 33333)
+ * @warning В случае ошибки сокет закрывается
+ */
 bool Server::initializeSocket() {
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
@@ -188,6 +317,20 @@ bool Server::initializeSocket() {
     return true;
 }
 
+/**
+ * @brief Аутентифицирует клиента
+ * 
+ * Получает аутентификационное сообщение от клиента, разбирает его на логин, соль и хеш,
+ * и проверяет аутентификационные данные через AuthDatabase.
+ * 
+ * @param clientSocket Сокет подключенного клиента
+ * @param clientLogin Ссылка для возврата логина клиента
+ * @return true если клиент успешно аутентифицирован, false в случае ошибки
+ * 
+ * @note Поддерживаются два формата сообщений:
+ *       1. "user" + salt(16) + hash(56) = 76 байт
+ *       2. login(8) + salt(16) + hash(56) = 80 байт
+ */
 bool Server::authenticateClient(int clientSocket, std::string& clientLogin) {
     char buffer[256];
     ssize_t bytesRead = recv(clientSocket, buffer, sizeof(buffer) - 1, 0);
@@ -227,6 +370,7 @@ bool Server::authenticateClient(int clientSocket, std::string& clientLogin) {
     if (authDB.authenticate(login, "", salt, hash)) {
         send(clientSocket, "OK", 2, 0);
         logger.logInfo("Client authenticated: " + login);
+        clientLogin = login;
         return true;
     } else {
         send(clientSocket, "ERR", 3, 0);
@@ -235,6 +379,20 @@ bool Server::authenticateClient(int clientSocket, std::string& clientLogin) {
     }
 }
 
+/**
+ * @brief Обрабатывает векторы от клиента
+ * 
+ * Получает от клиента количество векторов, затем для каждого вектора получает
+ * его размер и данные, вычисляет сумму каждого вектора и сохраняет результаты.
+ * 
+ * @param clientSocket Сокет подключенного клиента
+ * @return Вектор вычисленных сумм или пустой вектор в случае ошибки
+ * 
+ * @note Ограничения:
+ *       - Максимальное количество векторов: 1000
+ *       - Максимальный размер вектора: 1,000,000 элементов
+ *       - Размер вектора не может быть нулевым
+ */
 std::vector<uint16_t> Server::processVectors(int clientSocket) {
     std::vector<uint16_t> results;
     
@@ -288,6 +446,14 @@ std::vector<uint16_t> Server::processVectors(int clientSocket) {
     return results;
 }
 
+/**
+ * @brief Обрабатывает подключение клиента
+ * 
+ * Полный цикл обработки клиента: получение IP-адреса, аутентификация,
+ * получение и обработка векторов, отправка результатов, закрытие соединения.
+ * 
+ * @param clientSocket Сокет подключенного клиента
+ */
 void Server::handleClient(int clientSocket) {
     char clientIP[INET_ADDRSTRLEN];
     sockaddr_in clientAddr;
@@ -329,6 +495,18 @@ void Server::handleClient(int clientSocket) {
     logger.logInfo("Client " + std::string(clientIP) + " disconnected");
 }
 
+/**
+ * @brief Основная функция запуска сервера
+ * 
+ * Инициализирует все компоненты сервера, запускает прослушивание порта
+ * и в бесконечном цикле принимает и обрабатывает подключения клиентов.
+ * 
+ * @param argc Количество аргументов командной строки
+ * @param argv Массив аргументов командной строки
+ * @return 0 при успешном завершении, 1 в случае ошибки
+ * 
+ * @note Сервер работает до принудительного завершения (Ctrl+C)
+ */
 int Server::run(int argc, char** argv) {
     if (!parseCommandLine(argc, argv)) return 1;
     

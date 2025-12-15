@@ -156,3 +156,122 @@
 2025-11-24 19:29:59 - INFO - Processing 4 vectors
 2025-11-24 19:29:59 - INFO - Vector 1 size: 4
 2025-11-24 19:29:59 - INFO - Vector 1 sum: 10
+2025-12-15 17:29:25 - INFO - New client connected: 127.0.0.1
+2025-12-15 17:29:25 - INFO - Handling client: 127.0.0.1
+2025-12-15 17:29:25 - INFO - Received auth message, length: 76
+2025-12-15 17:29:25 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 17:29:25 - INFO - Auth attempt - Login: 'user', Salt: A09B97FC0E56A2A9
+2025-12-15 17:29:25 - INFO - Client authenticated: user
+2025-12-15 17:29:25 - INFO - Processing 4 vectors
+2025-12-15 17:29:25 - INFO - Vector 1 size: 4
+2025-12-15 17:29:25 - INFO - Vector 1 sum: 10
+2025-12-15 17:32:13 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 17:32:25 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 17:33:03 - INFO - New client connected: 127.0.0.1
+2025-12-15 17:33:03 - INFO - Handling client: 127.0.0.1
+2025-12-15 17:33:03 - INFO - Received auth message, length: 76
+2025-12-15 17:33:03 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 17:33:03 - INFO - Auth attempt - Login: 'user', Salt: A1C233E1026D220E
+2025-12-15 17:33:03 - INFO - Client authenticated: user
+2025-12-15 17:33:03 - INFO - Processing 4 vectors
+2025-12-15 17:33:03 - INFO - Vector 1 size: 4
+2025-12-15 17:33:03 - INFO - Vector 1 sum: 10
+2025-12-15 17:36:21 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 17:41:52 - INFO - New client connected: 127.0.0.1
+2025-12-15 17:41:52 - INFO - Handling client: 127.0.0.1
+2025-12-15 17:41:52 - INFO - Received auth message, length: 76
+2025-12-15 17:41:52 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 17:41:52 - INFO - Auth attempt - Login: 'user', Salt: D29979B7883FAA3C
+2025-12-15 17:41:52 - INFO - Client authenticated: user
+2025-12-15 17:41:52 - INFO - Processing 4 vectors
+2025-12-15 17:41:52 - INFO - Vector 1 size: 4
+2025-12-15 17:41:52 - INFO - Vector 1 sum: 10
+2025-12-15 17:50:12 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 17:53:14 - INFO - New client connected: 127.0.0.1
+2025-12-15 17:53:14 - INFO - Handling client: 127.0.0.1
+2025-12-15 17:53:14 - INFO - Received auth message, length: 76
+2025-12-15 17:53:14 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 17:53:14 - INFO - Auth attempt - Login: 'user', Salt: F52CCCD6A9D637D7
+2025-12-15 17:53:14 - INFO - Client authenticated: user
+2025-12-15 17:53:14 - INFO - Processing 4 vectors
+2025-12-15 17:53:14 - INFO - Vector 1 size: 4
+2025-12-15 17:53:14 - INFO - Vector 1 sum: 10
+2025-12-15 17:56:57 - ERROR - Failed to receive vector size for vector 2
+2025-12-15 18:02:59 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:02:59 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:02:59 - INFO - Received auth message, length: 76
+2025-12-15 18:02:59 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:02:59 - INFO - Auth attempt - Login: 'user', Salt: C9E5FF6DAA6B0854
+2025-12-15 18:02:59 - INFO - Client authenticated: user
+2025-12-15 18:02:59 - INFO - Processing 4 vectors
+2025-12-15 18:02:59 - INFO - Vector 1 size: 4
+2025-12-15 18:02:59 - INFO - Vector 1 sum: 10
+2025-12-15 18:04:33 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 18:04:54 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:04:54 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:04:54 - INFO - Received auth message, length: 76
+2025-12-15 18:04:54 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:04:54 - INFO - Auth attempt - Login: 'user', Salt: 4D381EB5617E0D76
+2025-12-15 18:04:54 - INFO - Client authenticated: user
+2025-12-15 18:04:54 - INFO - Processing 4 vectors
+2025-12-15 18:04:54 - INFO - Vector 1 size: 4
+2025-12-15 18:04:54 - INFO - Vector 1 sum: 10
+2025-12-15 18:17:36 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:17:36 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:17:36 - INFO - Received auth message, length: 76
+2025-12-15 18:17:36 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:17:36 - INFO - Auth attempt - Login: 'user', Salt: 8307DA7C0371A225
+2025-12-15 18:17:36 - INFO - Client authenticated: user
+2025-12-15 18:17:36 - INFO - Processing 4 vectors
+2025-12-15 18:17:36 - INFO - Vector 1 size: 4
+2025-12-15 18:17:36 - INFO - Vector 1 sum: 10
+2025-12-15 18:18:20 - ERROR - Failed to receive vector size for vector 2
+2025-12-15 18:18:56 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:18:56 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:18:56 - INFO - Received auth message, length: 76
+2025-12-15 18:18:56 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:18:56 - INFO - Auth attempt - Login: 'user', Salt: 149EC0FA4CB6CF3F
+2025-12-15 18:18:56 - INFO - Client authenticated: user
+2025-12-15 18:18:56 - INFO - Processing 4 vectors
+2025-12-15 18:18:56 - INFO - Vector 1 size: 4
+2025-12-15 18:18:56 - INFO - Vector 1 sum: 10
+2025-12-15 18:20:54 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 18:21:16 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:21:16 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:21:16 - INFO - Received auth message, length: 76
+2025-12-15 18:21:16 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:21:16 - INFO - Auth attempt - Login: 'user', Salt: E0AC01AF6F9E6188
+2025-12-15 18:21:16 - INFO - Client authenticated: user
+2025-12-15 18:21:16 - INFO - Processing 4 vectors
+2025-12-15 18:21:16 - INFO - Vector 1 size: 4
+2025-12-15 18:21:16 - INFO - Vector 1 sum: 10
+2025-12-15 18:22:00 - ERROR - Failed to receive vector size for vector 2
+2025-12-15 18:22:13 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:22:13 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:22:13 - INFO - Received auth message, length: 76
+2025-12-15 18:22:13 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:22:13 - INFO - Auth attempt - Login: 'user', Salt: 98A005F902A88A5F
+2025-12-15 18:22:13 - INFO - Client authenticated: user
+2025-12-15 18:22:13 - INFO - Processing 4 vectors
+2025-12-15 18:22:13 - INFO - Vector 1 size: 4
+2025-12-15 18:22:13 - INFO - Vector 1 sum: 10
+2025-12-15 18:25:39 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 18:26:16 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:26:16 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:26:16 - INFO - Received auth message, length: 76
+2025-12-15 18:26:16 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:26:16 - INFO - Auth attempt - Login: 'user', Salt: 9F5ACA651A23323C
+2025-12-15 18:26:16 - INFO - Client authenticated: user
+2025-12-15 18:26:16 - INFO - Processing 4 vectors
+2025-12-15 18:26:16 - INFO - Vector 1 size: 4
+2025-12-15 18:26:16 - INFO - Vector 1 sum: 10
+2025-12-15 18:28:35 - CRITICAL - Failed to bind socket to port 33333
+2025-12-15 18:28:49 - INFO - New client connected: 127.0.0.1
+2025-12-15 18:28:49 - INFO - Handling client: 127.0.0.1
+2025-12-15 18:28:49 - INFO - Received auth message, length: 76
+2025-12-15 18:28:49 - INFO - Detected client format: login(4) + salt(16) + hash(56) = 76 bytes
+2025-12-15 18:28:49 - INFO - Auth attempt - Login: 'user', Salt: 7295A1C68F00178E
+2025-12-15 18:28:49 - INFO - Client authenticated: user
+2025-12-15 18:28:49 - INFO - Processing 4 vectors
+2025-12-15 18:28:49 - INFO - Vector 1 size: 4
+2025-12-15 18:28:49 - INFO - Vector 1 sum: 10

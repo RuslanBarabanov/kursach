@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Класс Calculator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classCalculator-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Calculator</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Калькулятор для вычисления сумм векторов  
+ <a href="classCalculator.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="server_8h_source.html">server.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aabd10a11743ae09dfb085a239afb26ed"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalculator.html#aabd10a11743ae09dfb085a239afb26ed">calculateVectorSum</a> (const std::vector&lt; uint16_t &gt; &amp;vector)</td></tr>
+<tr class="memdesc:aabd10a11743ae09dfb085a239afb26ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет сумму элементов вектора с обработкой переполнения  <a href="classCalculator.html#aabd10a11743ae09dfb085a239afb26ed">Подробнее...</a><br /></td></tr>
+<tr class="separator:aabd10a11743ae09dfb085a239afb26ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Калькулятор для вычисления сумм векторов </p>
+<p>Вычисляет сумму элементов вектора с обработкой переполнения. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="aabd10a11743ae09dfb085a239afb26ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd10a11743ae09dfb085a239afb26ed">&#9670;&nbsp;</a></span>calculateVectorSum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Calculator::calculateVectorSum </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint16_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вычисляет сумму элементов вектора с обработкой переполнения </p>
+<p>Функция вычисляет сумму всех элементов вектора 16-битных беззнаковых целых чисел. Для предотвращения переполнения используется 64-битная арифметика, а результат приводится к 16-битному типу, что эквивалентно взятию остатка от деления на 65536.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Вектор 16-битных беззнаковых целых чисел </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Сумма элементов вектора по модулю 65536 (тип uint16_t)</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Для вектора из 1000 элементов со значением 10000 каждый: 1000 * 10000 = 10000000 10000000 % 65536 = 11000 </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Максимальное значение uint16_t: 65535 (0xFFFF) </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Для больших векторов сумма может превышать 2^64, но на практике это маловероятно </dd></dl>
+<p>&lt; unsigned long long = uint64_t</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li><a class="el" href="server_8h_source.html">server.h</a></li>
+<li><a class="el" href="server_8cpp.html">server.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

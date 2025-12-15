@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Класс AuthDatabase</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classAuthDatabase-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс AuthDatabase</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>База данных аутентификации пользователей  
+ <a href="classAuthDatabase.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="server_8h_source.html">server.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a77b7f0d80fe3e26d17c9543c86b79e63"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuthDatabase.html#a77b7f0d80fe3e26d17c9543c86b79e63">loadFromFile</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a77b7f0d80fe3e26d17c9543c86b79e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает базу данных аутентификации из файла  <a href="classAuthDatabase.html#a77b7f0d80fe3e26d17c9543c86b79e63">Подробнее...</a><br /></td></tr>
+<tr class="separator:a77b7f0d80fe3e26d17c9543c86b79e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1578749428712d8eb2af65438674d33d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuthDatabase.html#a1578749428712d8eb2af65438674d33d">authenticate</a> (const std::string &amp;login, const std::string &amp;password, const std::string &amp;salt, const std::string &amp;hash)</td></tr>
+<tr class="memdesc:a1578749428712d8eb2af65438674d33d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Аутентифицирует пользователя по логину, соли и хешу  <a href="classAuthDatabase.html#a1578749428712d8eb2af65438674d33d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1578749428712d8eb2af65438674d33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>База данных аутентификации пользователей </p>
+<p>Загружает и проверяет учетные данные пользователей из файла. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a1578749428712d8eb2af65438674d33d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1578749428712d8eb2af65438674d33d">&#9670;&nbsp;</a></span>authenticate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AuthDatabase::authenticate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>salt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Аутентифицирует пользователя по логину, соли и хешу </p>
+<p>Функция проверяет аутентификационные данные пользователя, вычисляя SHA224 хеш от комбинации соли и пароля, и сравнивает его с предоставленным хешем.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя (должен быть "user" после очистки пробелов) </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль (не используется, захардкожен как "P@ssW0rd") </td></tr>
+    <tr><td class="paramname">salt</td><td>Соль для хеширования (16 байт) </td></tr>
+    <tr><td class="paramname">hash</td><td>Ожидаемый хеш пароля (56 байт в hex) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если аутентификация успешна, false в случае ошибки</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Хеш вычисляется как SHA224(salt + "P@ssW0rd") в верхнем регистре </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Пароль захардкожен и должен совпадать с паролем в клиенте </dd></dl>
+
+</div>
+</div>
+<a id="a77b7f0d80fe3e26d17c9543c86b79e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b7f0d80fe3e26d17c9543c86b79e63">&#9670;&nbsp;</a></span>loadFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AuthDatabase::loadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает базу данных аутентификации из файла </p>
+<p>Функция читает файл в формате "логин:пароль" и заполняет внутреннюю карту пользователей. Каждая строка файла должна содержать логин и пароль, разделенные двоеточием.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Имя файла с данными аутентификации </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если файл успешно загружен, false в случае ошибки</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Не</td><td>выбрасывает исключения, ошибки логируются в stderr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li><a class="el" href="server_8h_source.html">server.h</a></li>
+<li><a class="el" href="server_8cpp.html">server.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

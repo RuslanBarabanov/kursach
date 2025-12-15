@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Исходный файл server.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">server.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="server_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef SERVER_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define SERVER_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structServerParams.html">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structServerParams.html">ServerParams</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structServerParams.html#a0a4f3c80db641f33971110faf72fed57">   31</a></span>&#160;    std::string <a class="code" href="structServerParams.html#a0a4f3c80db641f33971110faf72fed57">authFile</a> = <span class="stringliteral">&quot;./vcalc.conf&quot;</span>;  </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structServerParams.html#aca0becf81dc9bceddd5b58a87b3e6ec2">   32</a></span>&#160;    std::string <a class="code" href="structServerParams.html#aca0becf81dc9bceddd5b58a87b3e6ec2">logFile</a> = <span class="stringliteral">&quot;./log/vcalc.log&quot;</span>; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structServerParams.html#ab5ac86f67f884b7c9ab82259e3f78622">   33</a></span>&#160;    uint16_t <a class="code" href="structServerParams.html#ab5ac86f67f884b7c9ab82259e3f78622">port</a> = 33333;                   </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classAuthDatabase.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAuthDatabase.html">AuthDatabase</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::unordered_map&lt;std::string, std::string&gt; users; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classAuthDatabase.html#a77b7f0d80fe3e26d17c9543c86b79e63">loadFromFile</a>(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classAuthDatabase.html#a1578749428712d8eb2af65438674d33d">authenticate</a>(<span class="keyword">const</span> std::string&amp; login, <span class="keyword">const</span> std::string&amp; password, </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     <span class="keyword">const</span> std::string&amp; salt, <span class="keyword">const</span> std::string&amp; hash);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classLogger.html">   58</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLogger.html">Logger</a> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::string logFile; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> createLogDirectory(<span class="keyword">const</span> std::string&amp; filepath);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classLogger.html#a4f2ee02db1d03a83b6b9b43808e09f15">Logger</a>(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLogger.html#a1287de14553cab2d7fddb74a015cef63">initialize</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLogger.html#a97c1374c260c397ea60c90308bb4781e">logError</a>(<span class="keyword">const</span> std::string&amp; message, <span class="keywordtype">bool</span> critical = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLogger.html#a3b2e97470572358030fa427c649cf8d5">logInfo</a>(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classCalculator.html">   76</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCalculator.html">Calculator</a> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    uint16_t <a class="code" href="classCalculator.html#aabd10a11743ae09dfb085a239afb26ed">calculateVectorSum</a>(<span class="keyword">const</span> std::vector&lt;uint16_t&gt;&amp; vector);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classServer.html">   88</a></span>&#160;<span class="keyword">class </span><a class="code" href="classServer.html">Server</a> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="structServerParams.html">ServerParams</a> params;      </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classAuthDatabase.html">AuthDatabase</a> authDB;      </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classLogger.html">Logger</a> logger;            </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classCalculator.html">Calculator</a> calculator;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> serverSocket;         </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span> parseCommandLine(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> initializeSocket();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> handleClient(<span class="keywordtype">int</span> clientSocket);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span> authenticateClient(<span class="keywordtype">int</span> clientSocket, std::string&amp; clientLogin);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    std::vector&lt;uint16_t&gt; processVectors(<span class="keywordtype">int</span> clientSocket);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classServer.html#a44710fb755da46ddd28de545cc9cf8b5">run</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassAuthDatabase_html"><div class="ttname"><a href="classAuthDatabase.html">AuthDatabase</a></div><div class="ttdoc">База данных аутентификации пользователей</div><div class="ttdef"><b>Definition:</b> server.h:42</div></div>
+<div class="ttc" id="aclassAuthDatabase_html_a1578749428712d8eb2af65438674d33d"><div class="ttname"><a href="classAuthDatabase.html#a1578749428712d8eb2af65438674d33d">AuthDatabase::authenticate</a></div><div class="ttdeci">bool authenticate(const std::string &amp;login, const std::string &amp;password, const std::string &amp;salt, const std::string &amp;hash)</div><div class="ttdoc">Аутентифицирует пользователя по логину, соли и хешу</div><div class="ttdef"><b>Definition:</b> server.cpp:120</div></div>
+<div class="ttc" id="aclassAuthDatabase_html_a77b7f0d80fe3e26d17c9543c86b79e63"><div class="ttname"><a href="classAuthDatabase.html#a77b7f0d80fe3e26d17c9543c86b79e63">AuthDatabase::loadFromFile</a></div><div class="ttdeci">bool loadFromFile(const std::string &amp;filename)</div><div class="ttdoc">Загружает базу данных аутентификации из файла</div><div class="ttdef"><b>Definition:</b> server.cpp:83</div></div>
+<div class="ttc" id="aclassCalculator_html"><div class="ttname"><a href="classCalculator.html">Calculator</a></div><div class="ttdoc">Калькулятор для вычисления сумм векторов</div><div class="ttdef"><b>Definition:</b> server.h:76</div></div>
+<div class="ttc" id="aclassCalculator_html_aabd10a11743ae09dfb085a239afb26ed"><div class="ttname"><a href="classCalculator.html#aabd10a11743ae09dfb085a239afb26ed">Calculator::calculateVectorSum</a></div><div class="ttdeci">uint16_t calculateVectorSum(const std::vector&lt; uint16_t &gt; &amp;vector)</div><div class="ttdoc">Вычисляет сумму элементов вектора с обработкой переполнения</div><div class="ttdef"><b>Definition:</b> server.cpp:250</div></div>
+<div class="ttc" id="aclassLogger_html"><div class="ttname"><a href="classLogger.html">Logger</a></div><div class="ttdoc">Система логирования сервера</div><div class="ttdef"><b>Definition:</b> server.h:58</div></div>
+<div class="ttc" id="aclassLogger_html_a1287de14553cab2d7fddb74a015cef63"><div class="ttname"><a href="classLogger.html#a1287de14553cab2d7fddb74a015cef63">Logger::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Инициализирует логгер</div><div class="ttdef"><b>Definition:</b> server.cpp:192</div></div>
+<div class="ttc" id="aclassLogger_html_a3b2e97470572358030fa427c649cf8d5"><div class="ttname"><a href="classLogger.html#a3b2e97470572358030fa427c649cf8d5">Logger::logInfo</a></div><div class="ttdeci">void logInfo(const std::string &amp;message)</div><div class="ttdoc">Записывает информационное сообщение в лог</div><div class="ttdef"><b>Definition:</b> server.cpp:224</div></div>
+<div class="ttc" id="aclassLogger_html_a4f2ee02db1d03a83b6b9b43808e09f15"><div class="ttname"><a href="classLogger.html#a4f2ee02db1d03a83b6b9b43808e09f15">Logger::Logger</a></div><div class="ttdeci">Logger(const std::string &amp;filename)</div><div class="ttdoc">Конструктор логгера</div><div class="ttdef"><b>Definition:</b> server.cpp:163</div></div>
+<div class="ttc" id="aclassLogger_html_a97c1374c260c397ea60c90308bb4781e"><div class="ttname"><a href="classLogger.html#a97c1374c260c397ea60c90308bb4781e">Logger::logError</a></div><div class="ttdeci">void logError(const std::string &amp;message, bool critical=false)</div><div class="ttdoc">Записывает сообщение об ошибке в лог</div><div class="ttdef"><b>Definition:</b> server.cpp:205</div></div>
+<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="classServer.html">Server</a></div><div class="ttdoc">Основной класс сервера</div><div class="ttdef"><b>Definition:</b> server.h:88</div></div>
+<div class="ttc" id="aclassServer_html_a44710fb755da46ddd28de545cc9cf8b5"><div class="ttname"><a href="classServer.html#a44710fb755da46ddd28de545cc9cf8b5">Server::run</a></div><div class="ttdeci">int run(int argc, char **argv)</div><div class="ttdoc">Основная функция запуска сервера</div><div class="ttdef"><b>Definition:</b> server.cpp:520</div></div>
+<div class="ttc" id="aclassServer_html_ad5ec9462b520e59f7ea831e157ee5e59"><div class="ttname"><a href="classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server::Server</a></div><div class="ttdeci">Server()</div><div class="ttdoc">Конструктор сервера</div><div class="ttdef"><b>Definition:</b> server.cpp:276</div></div>
+<div class="ttc" id="astructServerParams_html"><div class="ttname"><a href="structServerParams.html">ServerParams</a></div><div class="ttdoc">Параметры конфигурации сервера</div><div class="ttdef"><b>Definition:</b> server.h:30</div></div>
+<div class="ttc" id="astructServerParams_html_a0a4f3c80db641f33971110faf72fed57"><div class="ttname"><a href="structServerParams.html#a0a4f3c80db641f33971110faf72fed57">ServerParams::authFile</a></div><div class="ttdeci">std::string authFile</div><div class="ttdoc">Файл аутентификации</div><div class="ttdef"><b>Definition:</b> server.h:31</div></div>
+<div class="ttc" id="astructServerParams_html_ab5ac86f67f884b7c9ab82259e3f78622"><div class="ttname"><a href="structServerParams.html#ab5ac86f67f884b7c9ab82259e3f78622">ServerParams::port</a></div><div class="ttdeci">uint16_t port</div><div class="ttdoc">Порт сервера</div><div class="ttdef"><b>Definition:</b> server.h:33</div></div>
+<div class="ttc" id="astructServerParams_html_aca0becf81dc9bceddd5b58a87b3e6ec2"><div class="ttname"><a href="structServerParams.html#aca0becf81dc9bceddd5b58a87b3e6ec2">ServerParams::logFile</a></div><div class="ttdeci">std::string logFile</div><div class="ttdoc">Файл логов</div><div class="ttdef"><b>Definition:</b> server.h:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

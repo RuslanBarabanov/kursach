@@ -1,0 +1,89 @@
+\hypertarget{classAuthDatabase}{}\doxysection{Класс Auth\+Database}
+\label{classAuthDatabase}\index{AuthDatabase@{AuthDatabase}}
+
+
+База данных аутентификации пользователей  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classAuthDatabase_a77b7f0d80fe3e26d17c9543c86b79e63}{load\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Загружает базу данных аутентификации из файла \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAuthDatabase_a1578749428712d8eb2af65438674d33d}{authenticate}} (const std\+::string \&login, const std\+::string \&password, const std\+::string \&salt, const std\+::string \&hash)
+\begin{DoxyCompactList}\small\item\em Аутентифицирует пользователя по логину, соли и хешу \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+База данных аутентификации пользователей 
+
+Загружает и проверяет учетные данные пользователей из файла. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classAuthDatabase_a1578749428712d8eb2af65438674d33d}\label{classAuthDatabase_a1578749428712d8eb2af65438674d33d}} 
+\index{AuthDatabase@{AuthDatabase}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!AuthDatabase@{AuthDatabase}}
+\doxysubsubsection{\texorpdfstring{authenticate()}{authenticate()}}
+{\footnotesize\ttfamily bool Auth\+Database\+::authenticate (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{login,  }\item[{const std\+::string \&}]{password,  }\item[{const std\+::string \&}]{salt,  }\item[{const std\+::string \&}]{hash }\end{DoxyParamCaption})}
+
+
+
+Аутентифицирует пользователя по логину, соли и хешу 
+
+Функция проверяет аутентификационные данные пользователя, вычисляя SHA224 хеш от комбинации соли и пароля, и сравнивает его с предоставленным хешем.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя (должен быть \char`\"{}user\char`\"{} после очистки пробелов) \\
+\hline
+{\em password} & Пароль (не используется, захардкожен как \char`\"{}\+P@ss\+W0rd\char`\"{}) \\
+\hline
+{\em salt} & Соль для хеширования (16 байт) \\
+\hline
+{\em hash} & Ожидаемый хеш пароля (56 байт в hex) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если аутентификация успешна, false в случае ошибки
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Хеш вычисляется как SHA224(salt + \char`\"{}\+P@ss\+W0rd\char`\"{}) в верхнем регистре 
+\end{DoxyNote}
+\begin{DoxyWarning}{Предупреждения}
+Пароль захардкожен и должен совпадать с паролем в клиенте 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAuthDatabase_a77b7f0d80fe3e26d17c9543c86b79e63}\label{classAuthDatabase_a77b7f0d80fe3e26d17c9543c86b79e63}} 
+\index{AuthDatabase@{AuthDatabase}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!AuthDatabase@{AuthDatabase}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily bool Auth\+Database\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Загружает базу данных аутентификации из файла 
+
+Функция читает файл в формате \char`\"{}логин\+:пароль\char`\"{} и заполняет внутреннюю карту пользователей. Каждая строка файла должна содержать логин и пароль, разделенные двоеточием.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Имя файла с данными аутентификации \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если файл успешно загружен, false в случае ошибки
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Не} & выбрасывает исключения, ошибки логируются в stderr \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

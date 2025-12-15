@@ -1,0 +1,35 @@
+cat > Doxyfile << 'EOF'
+# Базовые настройки
+DOXYFILE_ENCODING = UTF-8
+PROJECT_NAME = "Vector Sum Server"
+PROJECT_NUMBER = 1.0
+PROJECT_BRIEF = "Server for vector sum calculation"
+OUTPUT_DIRECTORY = docs
+
+# Входные файлы
+INPUT = .
+INPUT_ENCODING = UTF-8
+RECURSIVE = YES
+EXTRACT_ALL = YES
+EXTRACT_PRIVATE = YES
+EXTRACT_STATIC = YES
+
+# Вывод
+GENERATE_HTML = YES
+GENERATE_LATEX = NO  # ОТКЛЮЧАЕМ LaTeX
+GENERATE_RTF = NO
+GENERATE_MAN = NO
+GENERATE_XML = NO
+
+# HTML настройки
+HTML_OUTPUT = html
+HTML_TIMESTAMP = YES
+SEARCHENGINE = YES
+
+# Поиск
+ALPHABETICAL_INDEX = YES
+
+# Диаграммы
+HAVE_DOT = YES
+CLASS_DIAGRAMS = YES
+EOF
